@@ -4,14 +4,26 @@
  * @return {number[]}
  */
 var twoSum = function(numbers, target) {
-    let [left, right] = [0, numbers.length - 1];
 
-    while (left < right) {
-        const sum = numbers[left] + numbers[right];
+    //* M-1
+    // let [left, right] = [0, numbers.length - 1];
+    // while (left < right) {
+    //     const sum = numbers[left] + numbers[right];
 
-        if (sum === target) return [left + 1, right + 1];
-        if (sum < target) left++;
-        if (sum>target) right--;
+    //     if (sum === target) return [left + 1, right + 1];
+    //     if (sum < target) left++;
+    //     if (sum>target) right--;
+    // }
+    // return [-1, -1];
+
+    //* M-2
+    for (let i = 0; i < numbers.length - 1; i++) {
+        for (let j = i + 1; j < numbers.length; j++) {
+            if (numbers[i] + numbers[j] === target) {
+              return [i + 1, j + 1]; // Adjust indices to be 1-based
+         }
+      }
     }
-    return [-1, -1];
+    return null; // If no solution is found
+
 };
