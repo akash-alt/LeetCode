@@ -24,6 +24,7 @@ var trap = function(height) {
 
 
     //*********************************************************** *//
+    //* M-2 Optimize solution
     let i=0, j=height.length-1,maxLeft=0,maxRight=0;
     let totalTrapWater=0;
     while(i<j){
