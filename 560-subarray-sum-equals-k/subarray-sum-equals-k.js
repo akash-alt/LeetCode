@@ -31,4 +31,32 @@ var subarraySum = function(nums, k) {
     }
 
     return count;
+
+//******************************************** *//
+
+    // for(let i=0;i<nums.length;i++){
+    //     let sum = nums[i];
+    //     if(sum === k){
+    //         return [nums[i]];
+    //     }
+    //     for (let j = i + 1; j < nums.length; j++) {
+    //         sum += nums[j]; //* sum = sum+nums[j];
+    //         if (sum === k) {
+    //             return nums.slice(i, j + 1); 
+    //         }
+    //     }
+    // }
+    // return null
+
+//* M-2
+
+    // let counter = 0;
+    // for (let i=0;i<nums.length;i++) {
+    //     let base = 0;
+    //     for (let j=i;j<nums.length;j++) {
+    //         base+=nums[j]; //*  sum = sum+nums[j]
+    //         if (base == k) counter++;
+    //     }
+    // }
+    // return counter;
 };
