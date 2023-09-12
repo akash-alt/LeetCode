@@ -41,6 +41,5 @@ var minWindow = function (s, t) {
       left++;
     }
   }
-
   return minWindow;
 };
