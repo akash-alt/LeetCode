@@ -40,20 +40,44 @@ var isValid = function(s) {
 // }
 // return stack.length === 0; // Check if all parentheses are balanced
 
+
 //* M-3
- s = s.split("");
+//  s = s.split("");
+//     let stack = [];
+//     for (let z of s) {
+//         if (z === "(" || z === "{" || z === "[") {
+//             stack.push(z);
+//         } else {
+//             let top = stack[stack.length - 1];  //* this is showing top of the length 
+//             if (z === ")" && top === "(" || z === "]" && top === "[" || z === "}" && top === "{")
+//                 stack.pop();
+//             else
+//                 return false;
+//         }
+//     }
+//     return stack.length === 0;
+
+
+//*************   M-4   **************//
+
     let stack = [];
-    for (let z of s) {
-        if (z === "(" || z === "{" || z === "[") {
-            stack.push(z);
-        } else {
-            let top = stack[stack.length - 1];  //* this is showing top of the length 
-            if (z === ")" && top === "(" || z === "]" && top === "[" || z === "}" && top === "{")
-                stack.pop();
-            else
-                return false;
+
+    for(let i=0; i<s.length;i++){
+        let top = stack[stack.length -1]
+        if(s[i] === "(" || s[i] === "{" || s[i] === "["){
+            stack.push(s[i])
+        }
+        else if(s[i] === ")" && top === "(" || s[i] === "}" && top === "{" || s[i] === "]" && top === "[" ){
+            stack.pop(s[i])    
+        } else{
+            return false
         }
     }
-    return stack.length === 0;
+    if(stack.length === 0){
+        return true;
+    }
+    if(stack.length !== 0){
+        return false
+    }
 
 };
