@@ -43,11 +43,11 @@ var isValid = function(s) {
 //* M-3
  s = s.split("");
     let stack = [];
-    for (var z of s) {
+    for (let z of s) {
         if (z === "(" || z === "{" || z === "[") {
             stack.push(z);
         } else {
-            let top = stack[stack.length - 1];
+            let top = stack[stack.length - 1];  //* this is showing top of the length 
             if (z === ")" && top === "(" || z === "]" && top === "[" || z === "}" && top === "{")
                 stack.pop();
             else
