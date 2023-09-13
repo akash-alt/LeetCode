@@ -42,7 +42,7 @@ var isValid = function(s) {
 
 //* M-3
  s = s.split("");
-    var stack = [];
+    let stack = [];
     for (var z of s) {
         if (z === "(" || z === "{" || z === "[") {
             stack.push(z);
