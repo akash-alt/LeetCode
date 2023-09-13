@@ -47,7 +47,7 @@ var isValid = function(s) {
         if (z === "(" || z === "{" || z === "[") {
             stack.push(z);
         } else {
-            var top = stack[stack.length - 1];
+            let top = stack[stack.length - 1];
             if (z === ")" && top === "(" || z === "]" && top === "[" || z === "}" && top === "{")
                 stack.pop();
             else
