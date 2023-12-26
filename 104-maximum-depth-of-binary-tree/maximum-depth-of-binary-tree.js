@@ -10,21 +10,42 @@
  * @param {TreeNode} root
  * @return {number}
  */
+// var maxDepth = function(root) {
+//     if(!root){
+//         return 0
+//     }
+//     let depth = 0;
+//     let queue = [root];
+
+//     while(queue.length){
+//         let len = queue.length;
+//         for(let i=0;i<len;i++){
+//             let current = queue.shift();
+//             if(current.left) queue.push(current.left);
+//             if(current.right) queue.push(current.right);
+//         }
+//         depth++
+//     }
+//     return depth
+// };
+
+
 var maxDepth = function(root) {
-    if(!root){
-        return 0
+    if (!root) {
+        return 0;
     }
     let depth = 0;
     let queue = [root];
 
-    while(queue.length){
+    while (queue.length) {
         let len = queue.length;
-        for(let i=0;i<len;i++){
+        for (let i = 0; i < len; i++) {
             let current = queue.shift();
-            if(current.left) queue.push(current.left);
-            if(current.right) queue.push(current.right);
+            if (current.left) queue.push(current.left);
+            if (current.right) queue.push(current.right);
         }
-        depth++
+        depth++;
     }
-    return depth
+
+    return depth;
 };
